@@ -45,8 +45,8 @@ html, body {
 }
 
 #hangman-graphic {
-    max-height: 50%;
-    width: auto;
+    max-width: 50%;
+    height: auto;
 }
 
 #phrase {
@@ -55,7 +55,6 @@ html, body {
 } 
 
 #letters {
-    width: 90%;
     max-width: 720px;
     margin: $spacing auto;
     text-align: center;

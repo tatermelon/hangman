@@ -109,8 +109,8 @@ html, body {
 
 /* line 47, ../sass/screen.scss */
 #hangman-graphic {
-  max-height: 50%;
-  width: auto;
+  max-width: 50%;
+  height: auto;
 }
 
 /* line 52, ../sass/screen.scss */
@@ -121,13 +121,12 @@ html, body {
 
 /* line 57, ../sass/screen.scss */
 #letters {
-  width: 90%;
   max-width: 720px;
   margin: 20px auto;
   text-align: center;
 }
 
-/* line 64, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 .letter {
   width: 1.5em;
   margin: 5px;
