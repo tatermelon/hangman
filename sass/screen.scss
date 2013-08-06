@@ -6,39 +6,58 @@
 @import "compass/reset";
 @import "compass/css3";
 
-body {
+$pink: #D03D62;
+$spacing: 20px;
+$radius: 7px;
+
+html, body {
     height: 100%;
-    width: 100%;
-    background: url("../img/cloud_test.jpg") repeat-x;
-    @include background-size(552px 368px);
-    -webkit-animation: bgslide 10s linear infinite;
-    animation: bgslide 10s linear infinite;
+    font-family: 'Helvetica', Arial, Sans-serif;
 }
 
-
-@-webkit-keyframes bgslide {
-  100% {
-    background-position: 0 top;
-  }
-  0% {
-    background-position: 552px top;
-  }
+.centered {
+    text-align: center;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-@-moz-keyframes bgslide {
-  100% {
-    background-position: 0 top;
-  }
-  0% {
-    background-position: 552px top;
-  }
+.clearfix {
+    margin-bottom: $spacing;
 }
 
-@-o-keyframes bgslide {
-  100% {
-    background-position: 0 top;
-  }
-  0% {
-    background-position: 552px top;
-  }
+.instructions {
+    font-size: 1.5em;
+}
+
+.button {
+    cursor: pointer;
+    background-color: $pink;
+    color: white;
+    margin: $spacing auto;
+    padding: 10px;
+    width: 6em;
+    border-radius: $radius $radius;
+}
+
+.button.disabled {
+    background-color: lighten($pink, 20%);
+}
+
+#phrase {
+    letter-spacing: 10px;
+    font-size: 2.5em;
+} 
+
+#letters {
+    width: 90%;
+    max-width: 720px;
+    margin: $spacing auto;
+    text-align: center;
+}
+
+.letter {
+    width: 1.5em;
+    margin: 5px;
+    display: inline-block;
 }

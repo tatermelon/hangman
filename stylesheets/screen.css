@@ -67,51 +67,61 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 9, ../sass/screen.scss */
-body {
+/* line 13, ../sass/screen.scss */
+html, body {
   height: 100%;
-  width: 100%;
-  background: url("../img/cloud_test.jpg") repeat-x;
-  -webkit-background-size: 552px 368px;
-  -moz-background-size: 552px 368px;
-  -o-background-size: 552px 368px;
-  background-size: 552px 368px;
-  -webkit-animation: bgslide 10s linear infinite;
-  animation: bgslide 10s linear infinite;
+  font-family: 'Helvetica', Arial, Sans-serif;
 }
 
-@-webkit-keyframes bgslide {
-  /* line 20, ../sass/screen.scss */
-  100% {
-    background-position: 0 top;
-  }
-
-  /* line 23, ../sass/screen.scss */
-  0% {
-    background-position: 552px top;
-  }
+/* line 18, ../sass/screen.scss */
+.centered {
+  text-align: center;
+  margin: auto;
 }
 
-@-moz-keyframes bgslide {
-  /* line 29, ../sass/screen.scss */
-  100% {
-    background-position: 0 top;
-  }
-
-  /* line 32, ../sass/screen.scss */
-  0% {
-    background-position: 552px top;
-  }
+/* line 23, ../sass/screen.scss */
+.clearfix {
+  margin-bottom: 20px;
 }
 
-@-o-keyframes bgslide {
-  /* line 38, ../sass/screen.scss */
-  100% {
-    background-position: 0 top;
-  }
+/* line 27, ../sass/screen.scss */
+.instructions {
+  font-size: 1.5em;
+}
 
-  /* line 41, ../sass/screen.scss */
-  0% {
-    background-position: 552px top;
-  }
+/* line 31, ../sass/screen.scss */
+.button {
+  cursor: pointer;
+  background-color: #d03d62;
+  color: white;
+  margin: 20px auto;
+  padding: 10px;
+  width: 6em;
+  border-radius: 7px 7px;
+}
+
+/* line 41, ../sass/screen.scss */
+.button.disabled {
+  background-color: #e48fa4;
+}
+
+/* line 45, ../sass/screen.scss */
+#phrase {
+  letter-spacing: 10px;
+  font-size: 2.5em;
+}
+
+/* line 50, ../sass/screen.scss */
+#letters {
+  width: 90%;
+  max-width: 720px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* line 57, ../sass/screen.scss */
+.letter {
+  width: 1.5em;
+  margin: 5px;
+  display: inline-block;
 }

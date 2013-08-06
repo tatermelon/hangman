@@ -4,16 +4,70 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <title>Tatermelon</title>
+        
+        <title>Coursera Hangman</title>
+        
         <link href="img/favicon.ico" rel="icon" type="image/x-icon">
-        <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-        <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+        
+        <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" />
+        <link href="stylesheets/print.css" media="print" rel="stylesheet" />
         <!--[if IE]>
-            <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+            <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" />
         <![endif]-->
-        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        
+        <script src="js/jquery-1.9.1.min.js"></script>
+        
+        <script src="js/hangman.js"></script>
+        <script src="js/main.js"></script>
     </head>
     <body>
+        
+        <div id="main" class="centered">
+            <div class="vertically-centered">
+                <div class="instructions clearfix">
+                    Let's play hangman!
+                </div>
+                
+                <label for="email-input">E-mail</label>
+                <input id="email-input" name="email" placeholder="joe@appleseed.com" />
+                
+                <div id="play-btn" class="play-btn button disabled">Play!</div>
+            </div>
+        </div>
+        
+        <div id="hangman" class="centered" style="display:none;">
+            <div class="vertically-centered">
+                <div class="instructions clearfix">
+                    Let's play hangman!
+                </div>
+                
+                <div class="clearfix">
+                    <div id="phrase"></div>
+                </div>
+            
+                <div>
+                    <span id="try-count"></span> tries left
+                </div>
+                
+                <div id="letters"></div>
+            
+                <!-- <label for="guess-input">Guess a letter: </label>
+                <input id="guess-input" name="guess" />
+            
+                <div id="guess-btn" class="button">Guess!</div> -->
+                
+            </div>
+        </div>
+        
+        <div id="game-over" class="centered" style="display:none;">
+            <div class="vertically-centered">
+                <div id="game-status" class="instructions clearfix">
+                    
+                </div>
+            
+                <div class="play-btn button">Play Again!</div>
+            </div>
+        </div>
         
     </body>
 </html>
