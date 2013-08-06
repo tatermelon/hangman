@@ -1,16 +1,16 @@
 var Handlers = {
     startSession: function(resp) {
-        hangman.setState(resp);
+        hangman.game.setState(resp);
         
         $('#main').hide();
         $('#hangman').show();
         $('.letter').removeClass('disabled');
         
-        hangman.render();
+        hangman.game.render();
     },
     
     guess: function(resp) {
-        hangman.setState(resp);
+        hangman.game.setState(resp);
     }
 };
 
@@ -20,13 +20,36 @@ var Hangman = function() {
     var ALIVE = 'alive';
     var WON = 'won';
     var LOST = 'lost';
+    var LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
+                   'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     
-    var windowHeight = $(window).height();;
+    var images = {};
     
+    var windowHeight = $(window).height();
+    
+    var currentState = '';
     var gameKey = '';
     var phrase = '';
     var state = '';
     var numTriesLeft = 0;
+    
+    /* Load letter buttons */
+    for (var i in LETTERS) {
+        var letter = LETTERS[i];
+        
+        $('#letters')
+            .append($('<span>')
+                .text(letter)
+                .attr('id', 'letter-' + letter)
+                .attr('class', 'letter button')
+            );
+    }
+    
+    /* Preload images */
+    for (var i = 0; i <= 5; i++) {
+        images['life' + i] = new Image();
+        images['life' + i].src = 'img/photos/hangman-' + i + '.jpg';
+    }
     
     /* Assumes initially positioned at top of page */
     var setCentered = function(accessor) {
@@ -86,7 +109,7 @@ var Hangman = function() {
                 $('#hangman').show();
                 
                 $('#phrase').text(phrase);
-                $('#try-count').text(numTriesLeft);
+                $('#hangman-graphic').attr('src', images['life' + numTriesLeft].src);
             } else {
                 $('#hangman').hide();
                 $('#game-over').show();
@@ -98,7 +121,11 @@ var Hangman = function() {
                 }
             }
             
-            hangman.render();
+            if (currentState != state) {
+                hangman.game.render();
+            }
+            
+            currentState = state;
             
         },
         

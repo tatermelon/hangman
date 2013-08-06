@@ -77,19 +77,21 @@ html, body {
 .centered {
   text-align: center;
   margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 .clearfix {
   margin-bottom: 20px;
 }
 
-/* line 27, ../sass/screen.scss */
+/* line 29, ../sass/screen.scss */
 .instructions {
   font-size: 1.5em;
 }
 
-/* line 31, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 .button {
   cursor: pointer;
   background-color: #d03d62;
@@ -100,18 +102,24 @@ html, body {
   border-radius: 7px 7px;
 }
 
-/* line 41, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 .button.disabled {
   background-color: #e48fa4;
 }
 
-/* line 45, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
+#hangman-graphic {
+  max-height: 50%;
+  width: auto;
+}
+
+/* line 52, ../sass/screen.scss */
 #phrase {
   letter-spacing: 10px;
   font-size: 2.5em;
 }
 
-/* line 50, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 #letters {
   width: 90%;
   max-width: 720px;
@@ -119,7 +127,7 @@ html, body {
   text-align: center;
 }
 
-/* line 57, ../sass/screen.scss */
+/* line 64, ../sass/screen.scss */
 .letter {
   width: 1.5em;
   margin: 5px;

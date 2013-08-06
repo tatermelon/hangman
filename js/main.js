@@ -1,24 +1,14 @@
 var hangman = hangman || {};
 
 $(function() {
-    var LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
-                    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-                    
-    for (var i in LETTERS) {
-        var letter = LETTERS[i];
-        
-        $('#letters')
-            .append($('<span>')
-                .text(letter)
-                .attr('id', 'letter-' + letter)
-                .attr('class', 'letter button')
-            );
-    }
+    hangman.game = Hangman();
+    hangman.game.render();
     
+    /* Init handlers */
     $('.letter').off().click(function() {
         if (!$(this).hasClass('disabled')) {
             var letter = $(this).text();
-            hangman.submitGuess(letter);
+            hangman.game.submitGuess(letter);
             
             $(this).addClass('disabled');
         }
@@ -34,15 +24,12 @@ $(function() {
     
     $('.play-btn').click(function() {
         if (!$(this).hasClass('disabled')) {
-            hangman.startSession();
+            hangman.game.startSession();
         }
     });
     
-    hangman = Hangman();
-    hangman.render();
-    
     $(window).resize(function() {
-        hangman.setWindowHeight($(window).height());
-        hangman.render();
+        hangman.game.setWindowHeight($(window).height());
+        hangman.game.render();
     });
 });

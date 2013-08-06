@@ -44,6 +44,11 @@ html, body {
     background-color: lighten($pink, 20%);
 }
 
+#hangman-graphic {
+    max-height: 50%;
+    width: auto;
+}
+
 #phrase {
     letter-spacing: 10px;
     font-size: 2.5em;
